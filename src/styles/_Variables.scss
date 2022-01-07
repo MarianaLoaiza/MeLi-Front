@@ -1,0 +1,35 @@
+$color-yellow: #ffe600;
+$color-black: #333333;
+$color-dark-gray: #666666;
+$color-light-grey: #999999;
+$color-white: #eeeeee;
+$color-blue: #3483fa;
+
+$margin: 2rem; //32px
+$padding: 1rem; //16px
+
+$sm-width: 600px;
+
+@mixin font-size($small, $medium, $big) {
+  font-size: clamp($small, $medium, $big);
+}
+
+@mixin grid-column($column1, $column2, $column3) {
+  @if $column3 != 0 {
+    grid-template-columns: $column1 $column2 $column3;
+  } @else if $column2 != 0 {
+    grid-template-columns: $column1 $column2;
+  } @else {
+    grid-template-columns: $column1;
+  }
+}
+
+@mixin grid-row($row1, $row2, $row3) {
+  @if $row3 != 0 {
+    grid-template-rows: $row1 $row2 $row3;
+  } @else if $row2 != 0 {
+    grid-template-rows: $row1 $row2;
+  } @else {
+    grid-template-rows: $row1;
+  }
+}
